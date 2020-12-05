@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+
+{% block contenu %}
+
+<br>
+<div class="container-fluid">
+    <div class="row">
+	<div class="col-md-5">
+		<h5>Clients:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Créer Un Client</a>
+			<table class="table table-sm">
+				<tr>
+					<th>ID</th>
+					<th>Clients</th>
+					<th>Telephone</th>
+				</tr>
+				{% for client in clients %}
+				<tr>
+				<th>{{client.id}}</th>
+				<th>{{client.nom}}</th>
+				<th>{{client.telephone}}</th>
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+		<h5>Les 5 Dernières Comamndes</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Ajouter une Commande</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Client</th>
+					<th>Produit</th>
+					<th>Date de la commande</th>
+					<th>Status</th>
+					<th>Mise à Jour</th>
+					<th>Supprimer</th>
+				</tr>
+				{% for commande in commandes %}
+				<tr>
+				<th>{{commande.client}}</th>
+				<th>{{commande.produit}}</th>
+				<th>{{commande.date_creation}}</th>
+				<th>{{commande.status}}</th>
+				<th><a href="#" class="btn btn-primary">Modifier</a></th>
+				<th><a href="#" class="btn btn-danger">Supprimerr</a></th>
+
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+	</div>
+
+</div>
+
+
+{% endblock %}
