@@ -21,5 +21,7 @@ urlpatterns = [
     path('',include('produit.urls')),
     path('commande',include('commande.urls')),
     path('client',include('client.urls')),
+    path('login',include('accounts.urls')),
+
 
 ]

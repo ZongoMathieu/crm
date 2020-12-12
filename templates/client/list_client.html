@@ -21,8 +21,8 @@
 		<div class="card card-body">
 			<h5>Informations</h5>
 			<hr>
-			<p>Email: </p>
-			<p>Telephone: </p>
+			<p>Nom: {{client.nom}} </p>
+			<p>Telephone:{{client.telephone}} </p>
 		</div>
 	</div>
 
@@ -30,7 +30,7 @@
 		<div class="card card-body">
 			<h5>Total des Commandes</h5>
 			<hr>
-			<h1 style="text-align: center;padding: 10px"></h1>
+			<h1 style="text-align: center;padding: 10px">{{total_commande}}</h1>
 		</div>
 	</div>
 </div>
@@ -62,7 +62,16 @@
 					<th>Mise à Jour</th>
 					<th>Supprimer</th>
 				</tr>
-
+				{%for commande in commande %}
+				<tr>
+					<th>{{commande.produit}}</th>
+					<th>categorie</th>
+					<th>{{commande.date_creation}}</th>
+					<th>{{commande.status}}</th>
+					<th><a href="#" class="btn btn-primary">Modifier</a></th>
+				    <th><a href="#" class="btn btn-danger">Supprimerr</a></th>
+				</tr>
+				{% endfor %}
 			</table>
 		</div>
 	</div>
