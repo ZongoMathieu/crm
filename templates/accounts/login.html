@@ -14,11 +14,6 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background-image:url(static/images/corisbank.png);
-			background-repeat: no-repeat center;
-  			-webkit-background-size: cover; /* pour anciens Chrome et Safari */
- 			 background-size: 50%;
-
 		}
 		.user_card {
 			width: 350px;
@@ -71,10 +66,11 @@
 		}
 
 		#messages{
-			background-color: grey;
+			background-color: red;
 			color: #fff;
 			padding: 10px;
 			margin-top: 10px;
+			text-align:center;
 		}
 	</style>
 
@@ -91,11 +87,13 @@
 				</div>
 				<div class="d-flex justify-content-center form_container">
 					<form method="POST" action="">
+						{% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="username" placeholder="Nom d'utilisateur..." class="form-control">
+							<input type="text" name="username" placeholder="Nom d'utilisateur..."
+								  value="" class="form-control">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
@@ -110,6 +108,10 @@
 					</form>
 
 				</div>
+				{% for message in messages %}
+				<p id="messages">{{message}}</p>
+
+				{% endfor %}
 
 				<div class="mt-4">
 
