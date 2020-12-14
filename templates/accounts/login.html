@@ -31,6 +31,11 @@
 			border-radius: 5px;
 
 		}
+		.fgdr{
+		 	text-align: center;
+  			margin-top: 10px;
+  			align-self: center;
+  }
 
 		.form_container {
 			margin-top: 20px;
@@ -78,10 +83,11 @@
 <body>
 {% load static %}
 	<div class="container h-100">
-		<div class="d-flex justify-content-center h-100">
+		<div class="fgdr">
+			<img src="{% static 'images/logocoris2.png' %}">
+			</div>
+		<div class="d-flex justify-content-center h-50">
 			<div class="user_card">
-
-
 				<div class="d-flex justify-content-center">
 					<h3 id="form-title">CONNEXION</h3>
 				</div>
@@ -119,6 +125,10 @@
 				</div>
 			</div>
 		</div>
+		<div class="fgdr">
+    			<h1 style="color: #0d3e8e;"><strong>FGDR-UMOA</strong> </h1>
+			<p style="color: #d80016;">Fonds de Garantie des Dépôts et de Résolution dans l'UMOA</p>
+			</div>
 	</div>
 </body>
 

@@ -22,3 +22,9 @@ def loginPage(request):
             messages.info(request,'Login ou mot de passe incorrect!')
     context={}
     return render(request,'accounts/login.html', context)
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
+
